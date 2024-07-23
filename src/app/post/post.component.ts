@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../service/posts.service';
 import { RouterLink } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, HttpClientModule, NgFor],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss'
 })
 export class PostComponent implements OnInit{
   currentDateTime!: string;
-  postArr: any[] = [];
 
   constructor(private service: PostsService) {}
 
   ngOnInit() {
     this.getCurrentDateTime();
-    this.catchPost(); 
   }
 
   getCurrentDateTime() {
@@ -25,14 +25,4 @@ export class PostComponent implements OnInit{
     this.currentDateTime = now.toLocaleString();
   }
 
-  catchPost() {
-    this.service.getPost().subscribe({
-      next: (res: any) => {
-        this.postArr = res;
-      },
-      error: (err: any) => {
-        console.error('Error fetching posts', err);
-      }
-    });
-  }
 }

@@ -1,0 +1,30 @@
+<div class="users-table">
+    <div class="search-div">
+        <input type="search" placeholder="Search users..." (input)="search($event)">
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Company</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of filteredUsers">
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.company.name }}</td>
+          <td style="display: flex; justify-content: space-evenly;">
+            <button id="post" (click)="viewPosts(user.id)">Posts</button>
+            <button id="todo" (click)="viewTodos(user.id)">Todos</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,64 @@
+.post-div{
+    width: 100%;            
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 3px;
+            width: 100%;
+            border-style: none;
+            border-radius: 3px;
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+            &:hover{
+                transition: 0.3s;
+                background-color: #dadada50;
+                color: blue;
+            }
+        }
+    }
+}
+
+.details-of-posts{
+    position: absolute;
+    border: 1px solid grey;
+    background-color: white;
+    width: 60%;
+    right: 20%;
+    top: 50%;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+    }
+    #cv-btn{
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: transparent;
+        padding: 1px 6px;
+        &:hover{
+            background-color: red;
+            color: white;
+            transition: 0.2s;
+        }
+    }
+}

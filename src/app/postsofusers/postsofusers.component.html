@@ -1,0 +1,41 @@
+<div class="post-div">
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of postArr">
+            <td>{{ post.id }}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.body }}</td>
+            <td>
+              <button (click)="viewCloseDetails()">Details</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>    
+</div>
+<div *ngIf="!showPost" class="details-of-posts">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ost of postArr">
+        <td> {{ost.id}} </td>
+        <td> {{ost.title}} </td>
+        <td> {{ost.body}} </td>
+      </tr>
+      <button (click)="viewCloseDetails()" id="cv-btn">X</button>
+    </tbody>
+  </table>
+</div>
