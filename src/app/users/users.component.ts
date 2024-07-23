@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../service/posts.service';
 import { NgFor } from '@angular/common';
-import { user } from '../interface/interface-user-post';
+import { user } from '../interface/user';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, RouterLink],
   templateUrl: './users.component.html',
   styleUrl: './users.component.scss'
 })
@@ -36,11 +37,5 @@ export class UsersComponent implements OnInit{
       user.email.toLowerCase().includes(query.toLowerCase())
     );
   }
-  viewPosts(userId: number) {
-    
-  }
 
-  viewTodos(userId: number) {
-    
-  }
 }

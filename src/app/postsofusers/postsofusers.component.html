@@ -14,28 +14,28 @@
             <td>{{ post.title }}</td>
             <td>{{ post.body }}</td>
             <td>
-              <button (click)="viewCloseDetails()">Details</button>
+              <button (click)="viewDetails(post.id)">Details</button>
             </td>
           </tr>
         </tbody>
     </table>    
 </div>
-<div *ngIf="!showPost" class="details-of-posts">
+<div *ngIf="selectedPost" class="details-of-posts">
   <table>
     <thead>
-      <tr>
+    <tr>
         <th>ID</th>
         <th>Title</th>
         <th>Description</th>
-      </tr>
+    </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let ost of postArr">
-        <td> {{ost.id}} </td>
-        <td> {{ost.title}} </td>
-        <td> {{ost.body}} </td>
-      </tr>
-      <button (click)="viewCloseDetails()" id="cv-btn">X</button>
+    <tr>
+        <td> {{selectedPost.id}} </td>
+        <td> {{selectedPost.title}} </td>
+        <td> {{selectedPost.body}} </td>
+    </tr>
+    <button (click)="closeDetails()" id="cv-btn">X</button>
     </tbody>
   </table>
 </div>

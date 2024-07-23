@@ -3,7 +3,7 @@ import { PostComponent } from './post/post.component';
 import { ErrorComponent } from './error/error.component';
 import { UsersComponent } from './users/users.component';
 import { PostsofusersComponent } from './postsofusers/postsofusers.component';
-
+import { TodoComponent } from './todo/todo.component';
 export const routes: Routes = [
    {
     path: '',
@@ -24,6 +24,11 @@ export const routes: Routes = [
         path: 'posts',
         title: 'posts',
         component: PostsofusersComponent
+    },
+    {
+        path: 'todo/:id',
+        title: 'todo list',
+        component: TodoComponent
     },
     {
         path: '**',

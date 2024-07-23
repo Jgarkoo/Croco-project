@@ -1,57 +1,55 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { PostsService } from '../service/posts.service';
-import { NgFor, NgIf } from '@angular/common';
-import { posts } from '../interface/interface-user-post';
-import { ActivatedRoute } from '@angular/router';
+import {  NgFor, NgIf } from '@angular/common';
+import { posts } from '../interface/posts';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-postsofusers',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, RouterLink],
   templateUrl: './postsofusers.component.html',
   styleUrl: './postsofusers.component.scss'
 })
 export class PostsofusersComponent implements OnInit{
   
-  id: any
-  post: any = {}
+  id: string | undefined ;
+  selectedPost: posts | null = null;
   postArr: posts[] = [];
-  showPost: boolean = false;
 
-  constructor(private service: PostsService, private route: ActivatedRoute){
-    this.id = this.route.snapshot.paramMap.get('id') || ' ';
+  constructor(private service: PostsService){
   }
   
   ngOnInit(): void {
-  this.catchPost();
+    this.catchPost();
   }
 
   catchPost() {
     this.service.getPost().subscribe({
-      next: (res: any) => {
+      next: (res: posts[]) => {
         this.postArr = res;
       },
-      error: (err: any) => {
-        console.error('Error fetching posts', err);
+      error: (err) => {
+         console.log(err);
       }
     });
   }
 
-  catchSinglePost(){
-    this.service.getSinglePost(this.id).subscribe({next: (res) =>{
-      this.post = res;
-    },
-    error: (err) =>{
-      console.log(err);
-      
-    }
-  })
+  viewDetails(postId: number) {
+    this.service.getSinglePost(postId).subscribe({
+      next: (res: posts) => {
+        this.selectedPost = res;
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
 
-  viewCloseDetails() {
-    this.showPost = !this.showPost;
-    this.catchSinglePost();
+  closeDetails() {
+    this.selectedPost = null;
   }
 
-  
+
 }

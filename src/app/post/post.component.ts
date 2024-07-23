@@ -12,17 +12,12 @@ import { NgFor } from '@angular/common';
   styleUrl: './post.component.scss'
 })
 export class PostComponent implements OnInit{
-  currentDateTime!: string;
+  
 
-  constructor(private service: PostsService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.getCurrentDateTime();
   }
 
-  getCurrentDateTime() {
-    const now = new Date();
-    this.currentDateTime = now.toLocaleString();
-  }
-
+  
 }

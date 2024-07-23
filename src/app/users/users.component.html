@@ -21,8 +21,8 @@
           <td>{{ user.phone }}</td>
           <td>{{ user.company.name }}</td>
           <td style="display: flex; justify-content: space-evenly;">
-            <button id="post" (click)="viewPosts(user.id)">Posts</button>
-            <button id="todo" (click)="viewTodos(user.id)">Todos</button>
+            <button id="post" [routerLink]="">Posts</button>
+            <button id="todo" [routerLink]="['/todo', user.id]">Todos</button>
           </td>
         </tr>
       </tbody>
