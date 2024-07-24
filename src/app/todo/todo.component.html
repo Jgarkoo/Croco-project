@@ -1,4 +1,9 @@
 <div class="todo-list">
+    <div>
+        <button [routerLink]="['/users']">
+            &#8249;
+        </button>        
+    </div>
     <table>
         <thead>
         <tr>
@@ -11,7 +16,7 @@
         <tr>
             <td> {{todo.id}} </td>
             <td> {{todo.title}} </td>
-            <td [style.color]="todo.completed ? 'green' : 'red'" 
+            <td [style.color]="todo.completed ? '#07e007' : 'red'" 
             > 
                 {{todo.completed}} 
             </td>

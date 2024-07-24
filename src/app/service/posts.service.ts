@@ -22,10 +22,14 @@ export class PostsService {
 
   getUser(): Observable<user[]> {
     return this.http.get<user[]>(`${this.postURL}/users`);
-  }
+  } 
 
   getSinglePost(id: number): Observable<posts> {
     return this.http.get<posts>(`${this.postURL}/posts/${id}`);
+  }
+
+  getPostsByUserId(userId: number): Observable <posts[]>{
+    return this.http.get<posts[]>(`${this.postURL}/posts?userId=${userId}`)
   }
 
   getSingleTodo(id: any): Observable<todos> {

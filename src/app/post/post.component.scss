@@ -1,20 +1,37 @@
-main{
-    color: white; 
-    button{
-        font-size: 20px;
-        margin-top: 10px;
-        margin-left: 10px;
-        padding: 10px;
-        border: solid grey;
-        border-width: 0px 0px 1px 0px;
-        border-radius: 0px;
-        border-color: transparent;
-        cursor: pointer;
-        background-color: white;
-        &:hover{
-            color: #0e0aff;
-            transition: 0.2s;
-            border-color: #0e0aff;
+.post-list{
+    margin-top: 20px;
+    margin-left: 20px;
+    .posts-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        .post-card {
+            border: 1px solid grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 2%;
+            width: 420px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            background-color: white;
         }
+        
     }
+    
+}
+
+.post-title, .post-description {
+    width: 100%;
+    text-align: center;
+}
+
+.post-title h2, .post-description h2 {
+    margin: 0;
+}
+
+.post-title span, .post-description span {
+    font-weight: normal;
 }

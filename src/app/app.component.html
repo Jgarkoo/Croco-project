@@ -1,19 +1,12 @@
-<div class="container">
-    <header>
-        <div>
-            <a href="/home">Luka's project</a>
-        </div>
-        <div>
-            <h4 style="color: white;">
-                {{ currentDateTime  }}
-            </h4>
-        </div>
-    </header>
-        
+<div class="app-container">
+    <div>
+        <app-header></app-header>
+    </div>
+    <div>
+        <router-outlet></router-outlet>       
+    </div>
+    <div>
+        <app-footer></app-footer>
+    </div>    
 </div>
 
-<div>
-    <router-outlet>
-  
-    </router-outlet>    
-</div>

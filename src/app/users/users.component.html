@@ -5,6 +5,7 @@
     <table>
       <thead>
         <tr>
+          <th>ID</th>
           <th>Name</th>
           <th>Username</th>
           <th>Email</th>
@@ -15,13 +16,14 @@
       </thead>
       <tbody>
         <tr *ngFor="let user of filteredUsers">
+          <td> {{user.id}} </td>
           <td>{{ user.name }}</td>
           <td>{{ user.username }}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.phone }}</td>
           <td>{{ user.company.name }}</td>
-          <td style="display: flex; justify-content: space-evenly;">
-            <button id="post" [routerLink]="">Posts</button>
+          <td class="pt-btn">
+            <button id="post" [routerLink]="['/post', user.id]">Posts</button>
             <button id="todo" [routerLink]="['/todo', user.id]">Todos</button>
           </td>
         </tr>

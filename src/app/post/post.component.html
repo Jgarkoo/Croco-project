@@ -1,10 +1,12 @@
-<main>
-    <div class="boddy">
-        <button id="users" [routerLink]="['/users']">
-            Users
-        </button>
-        <button id="posts" [routerLink]="['/posts']">
-            Posts
-        </button>
+<div class="post-list">
+    <div class="posts-container">
+        <div *ngFor="let post of postArr" class="post-card">
+           <div class="post-title">
+                <h2>TITLE: <span>{{ post.title }}</span></h2>
+           </div>
+           <div class="post-description">
+                <h2>DESCRIPTION: <span>{{ post.body }}</span></h2>
+           </div>
+        </div>   
     </div>
-</main>
+</div>

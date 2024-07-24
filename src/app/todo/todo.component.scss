@@ -1,11 +1,22 @@
 .todo-list{
     display: flex;
-    justify-content: center;
-    width: 100%;
-    border: none;
-    padding: 20px;
+    justify-content: space-between;
+    width: 62%;
+    margin: 20px 0px 0px 20px;
+    button{
+        padding: 8px 16px;
+        border: none;
+        border-radius: 20px;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover{
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+        }
+    }   
     table {
-        width: 40%;
+        width: 52%;
         border-collapse: collapse;
         th, td {
             border: 1px solid #ddd;

@@ -2,21 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../service/posts.service';
 import { todos } from '../interface/todo';
 import { NgFor, NgIf } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-todo',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, RouterLink],
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.scss'
 })
 export class TodoComponent implements OnInit{
   
   id: string;
-  todoList: todos | null = null;
   todo: any = {};
-
 
   constructor(private service: PostsService, private route: ActivatedRoute){
     this.id = this.route.snapshot.paramMap.get('id') || ' ';
