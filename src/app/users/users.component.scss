@@ -1,65 +1,65 @@
-.users-table{
+.users-table {
     margin-top: 20px;
     width: 100%;
-    .search-div{
-        margin-left: 35%;
+    .search-div {
+        display: flex;
+        justify-content: center;
         margin-bottom: 20px;
-        input{
+        input {
             padding: 12px;
             border-style: none;
             background-color: #8080802e;
             border-radius: 20px;
-            width: 50%;
-            &:focus{
+            width: 80%;
+            max-width: 600px;
+            &:focus {
                 outline: none;
             }
         }
     }
-    table {
+    .table- {
         width: 100%;
-        border-collapse: collapse;
-    }
-      
-    th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-      
-    th {
-        background-color: #f2f2f2;
-    }
-
-    .pt-btn{
-        display: flex; 
-        justify-content: space-evenly;
-    }
-
-    button{
-        padding: 5px;
-        border-style: none;
-        border-radius: 5px;
-        cursor: pointer;
-        
-    }
-    #todo{
-        background-color: orange;
-        color: white;
-        &:hover{
-            background-color: #dadada50;
-            color: orange;
-            transition: 0.3s;
+        overflow-x: auto;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .pt-btn {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+            button {
+                padding: 5px;
+                border-style: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            #todo {
+                background-color: orange;
+                color: white;
+                &:hover {
+                    background-color: #dadada50;
+                    color: orange;
+                    transition: 0.3s;
+                }
+            }
+            #post {
+                background-color: green;
+                color: white;
+                &:hover {
+                    background-color: #dadada50;
+                    color: green;
+                    transition: 0.3s;
+                }
+            }
         }
     }
-    #post{
-        background-color: green;
-        color: white;
-        &:hover{
-            background-color: #dadada50;
-            color: green;
-            transition: 0.3s;
-        }
-    }
-}   
-
-
-  
+}

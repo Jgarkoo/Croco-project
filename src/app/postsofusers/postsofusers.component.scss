@@ -28,12 +28,14 @@
 }
 
 .details-of-posts{
-    position: absolute;
+    position: fixed;
     border: 1px solid grey;
     background-color: white;
     width: 60%;
     right: 20%;
-    top: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     table {
         width: 100%;
         border-collapse: collapse;

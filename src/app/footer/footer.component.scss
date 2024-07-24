@@ -1,21 +1,14 @@
-
-footer{
-    margin-top: 220px;
+.footer-container {
     background-color: #111;
     color: #fff;
-    position: absolute;
-    width: 100%;
     padding: 20px 0;
-    display: flex;
-    justify-content: center;
-}
-
-.footer-container {
-    width: 100%;
-    max-width: 1200px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 220px;
 }
 
 .footer-social {
@@ -31,7 +24,11 @@ footer{
 
 .footer-links {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 20px;
 }
 
 .footer-column {
@@ -70,4 +67,11 @@ footer{
 
 .footer-legal p {
     margin: 5px 0;
+}
+
+@media (min-width: 768px) {
+    .footer-links {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
