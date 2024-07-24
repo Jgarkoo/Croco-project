@@ -38,3 +38,30 @@
       </div>
     </div>  
 </div>
+ 
+<div  class="user-info">
+  <div *ngFor="let user of filteredUsers" class="infos2">
+    <div>
+      <h5>ID: {{user.id}} </h5>
+    </div>
+    <div>
+      <h5>Name: {{ user.name }} </h5>
+    </div>
+    <div>
+      <h5>Users: {{ user.username }} </h5>
+    </div>
+    <div>
+      <h5>Phone: {{ user.email }} </h5>
+    </div>
+    <div>
+      <h5>Company: {{ user.phone }}</h5>
+    </div>
+    <div>
+      <h5>Actions: {{ user.company.name }} </h5>
+    </div>
+    <div class="pt-btn"> 
+      <button id="post" [routerLink]="['/post', user.id]">Posts</button>
+      <button id="todo" [routerLink]="['/todo', user.id]">Todos</button>
+    </div>
+  </div>
+</div>

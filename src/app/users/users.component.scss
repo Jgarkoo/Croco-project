@@ -98,6 +98,57 @@
     }
 }
 
+.user-info{
+    display: none;
+}
+
+.infos2{
+    margin-bottom: 20px;
+    padding: 10px 0px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+
+    div {
+        flex: 1;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .pt-btn {
+        display: flex;
+        justify-content: flex-end;
+        gap: 5px;
+        button {
+            padding: 5px;
+            border-style: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #todo {
+            background-color: orange;
+            color: white;
+
+            &:hover {
+                background-color: #dadada50;
+                color: orange;
+                transition: 0.3s;
+            }
+        }
+
+        #post {
+            background-color: green;
+            color: white;
+
+            &:hover {
+                background-color: #dadada50;
+                color: green;
+                transition: 0.3s;
+            }
+        }
+    }
+
+}
+
 @media (max-width: 768px) {
     .table- {
         .infos, .users-info {
@@ -111,5 +162,12 @@
                 justify-content: flex-start;
             }
         }
+    }
+    .table-{
+        display: none;
+    }
+
+    .user-info{
+        display: block;
     }
 }
