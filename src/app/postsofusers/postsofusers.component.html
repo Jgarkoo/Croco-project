@@ -21,21 +21,10 @@
     </table>    
 </div>
 <div *ngIf="selectedPost" class="details-of-posts">
-  <table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td> {{selectedPost.id}} </td>
-        <td> {{selectedPost.title}} </td>
-        <td> {{selectedPost.body}} </td>
-    </tr>
-    <button (click)="closeDetails()" id="cv-btn">X</button>
-    </tbody>
-  </table>
+  <button (click)="closeDetails()" id="cv-btn">X</button>
+  <div class="dt-ps">
+    <h3> <strong>ID:</strong> {{selectedPost.id}} </h3>
+    <h3> <strong>Title:</strong> {{selectedPost.title}} </h3>
+    <h3> <strong>Description:</strong> {{selectedPost.body}} </h3>
+  </div>
 </div>

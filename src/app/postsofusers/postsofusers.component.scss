@@ -27,7 +27,7 @@
     }
 }
 
-.details-of-posts{
+.details-of-posts {
     position: fixed;
     border: 1px solid grey;
     background-color: white;
@@ -36,31 +36,35 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+    .dt-ps {
+        h3{
+            border: 1px solid grey;
         }
-        th {
-            background-color: #f2f2f2;
+        strong{
+            font-weight: bolder;
         }
-
     }
-    #cv-btn{
-        position: absolute;
-        right: 3px;
-        top: 3px;
+    #cv-btn {
+        margin-left: 97%;
         border: none;
         font-size: 20px;
         cursor: pointer;
         background-color: transparent;
         padding: 1px 6px;
-        &:hover{
+        &:hover {
             background-color: red;
             color: white;
             transition: 0.2s;
+        }
+    }
+}
+
+
+@media (max-width: 768px){
+    .details-of-posts{
+        width: 90%;
+        #cv-btn{
+            margin-left: 93%;
         }
     }
 }
