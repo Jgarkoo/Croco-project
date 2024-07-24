@@ -3,32 +3,38 @@
         <input type="search" placeholder="Search users..." (input)="search($event)">
     </div>
     <div class="table-">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Company</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of filteredUsers">
-            <td> {{user.id}} </td>
-            <td>{{ user.name }}</td>
-            <td>{{ user.username }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.phone }}</td>
-            <td>{{ user.company.name }}</td>
-            <td class="pt-btn">
-              <button id="post" [routerLink]="['/post', user.id]">Posts</button>
-              <button id="todo" [routerLink]="['/todo', user.id]">Todos</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="infos">
+        <h3>ID</h3>
+        <h3>Name</h3>
+        <h3>Username</h3>
+        <h3>Email</h3>
+        <h3>Phone</h3>
+        <h3>Company</h3>
+        <h3>Actions</h3>
+      </div>
+      <div *ngFor="let user of filteredUsers" class="users-info">
+        <div>
+          <h5> {{user.id}} </h5>
+        </div>
+        <div>
+          <h5> {{ user.name }} </h5>
+        </div>
+        <div>
+          <h5> {{ user.username }} </h5>
+        </div>
+        <div>
+          <h5> {{ user.email }} </h5>
+        </div>
+        <div>
+          <h5> {{ user.phone }}</h5>
+        </div>
+        <div>
+          <h5> {{ user.company.name }} </h5>
+        </div>
+        <div class="pt-btn"> 
+          <button id="post" [routerLink]="['/post', user.id]">Posts</button>
+          <button id="todo" [routerLink]="['/todo', user.id]">Todos</button>
+        </div>
+      </div>
     </div>  
 </div>

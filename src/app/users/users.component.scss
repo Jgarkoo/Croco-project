@@ -1,64 +1,114 @@
 .users-table {
-    margin-top: 20px;
     width: 100%;
+    display: block;
+
     .search-div {
         display: flex;
         justify-content: center;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+
         input {
             padding: 12px;
             border-style: none;
             background-color: #8080802e;
             border-radius: 20px;
-            width: 80%;
-            max-width: 600px;
+            width: 40%;
+
             &:focus {
                 outline: none;
             }
         }
     }
+
     .table- {
         width: 100%;
-        overflow-x: auto;
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            th, td {
-                border: 1px solid #ddd;
-                padding: 8px;
+
+        .infos {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 10px 0px;
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+
+            div {
+                flex: 1;
                 text-align: center;
+                font-weight: bold;
+                padding: 10px;
             }
-            th {
-                background-color: #f2f2f2;
+        }
+
+        .users-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-top: none;
+
+            &:nth-child(even) {
+                background-color: #f9f9f9;
             }
+
+            div {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex: 1;
+                text-align: center;
+                padding: 10px 0px;
+                overflow-wrap: anywhere;
+            }
+
             .pt-btn {
                 display: flex;
-                justify-content: center;
-                gap: 10px;
-            }
-            button {
-                padding: 5px;
-                border-style: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            #todo {
-                background-color: orange;
-                color: white;
-                &:hover {
-                    background-color: #dadada50;
-                    color: orange;
-                    transition: 0.3s;
+                justify-content: flex-end;
+                gap: 5px;
+                button {
+                    padding: 5px;
+                    border-style: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                #todo {
+                    background-color: orange;
+                    color: white;
+
+                    &:hover {
+                        background-color: #dadada50;
+                        color: orange;
+                        transition: 0.3s;
+                    }
+                }
+
+                #post {
+                    background-color: green;
+                    color: white;
+
+                    &:hover {
+                        background-color: #dadada50;
+                        color: green;
+                        transition: 0.3s;
+                    }
                 }
             }
-            #post {
-                background-color: green;
-                color: white;
-                &:hover {
-                    background-color: #dadada50;
-                    color: green;
-                    transition: 0.3s;
-                }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .table- {
+        .infos, .users-info {
+            flex-direction: column;
+
+            div {
+                text-align: left;
+            }
+
+            .pt-btn {
+                justify-content: flex-start;
             }
         }
     }
